@@ -9,6 +9,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {
@@ -20,6 +21,24 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
+    build: {
+        babel: {
+            presets: ['es2015', 'stage-0']
+        }
+    },
+
+
+    modules: [
+        ['storyblok-nuxt', {accessToken: 'DYrdze78tQIqB0T6ifOsQgtt', cacheProvider: 'memory'}]
+    ],
+    plugins: [
+        '~/plugins/components'
+    ],
+
+    router: {
+        middleware: 'languageDetection'
+    },
+
   loading: { color: '#3B8070' },
   /*
   ** Build configuration
